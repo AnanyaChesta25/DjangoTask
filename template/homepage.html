@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENTINFO</title>
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+
+</head>
+<body>
+    <header>
+        <h1>Student Information</h1>
+    </header>
+<div class="body">
+    <div class="header-row">
+        <div class="flex-item id">
+          ID  
+        </div>
+        <div class="flex-item name">
+            Student Name
+        </div>
+        <div class="flex-item dob">
+            Student DOB
+        </div>
+        <div class="flex-item email">
+            Student email
+        </div>
+        <div class="flex-item address">
+            Student Address
+        </div>
+        <div class="flex-item assigned_to">
+
+           Assigned_To
+        </div>
+    </div>
+ {% for student in students%}
+    <div class="flex-row">
+        <div class="flex-item id">
+            {{student.id}}
+        </div>
+        <div class="flex-item name">
+            {{student.student_name}}
+        </div>
+        <div class="flex-item dob">
+
+            {{student.date_of_birth}}
+        </div>
+        <div class="flex-item email">
+            
+            {{student.email}}
+        </div>
+        <div class="flex-item address">
+
+            {{student.s_address}}
+        </div>
+        <div class="flex-item assigned_to">
+
+            {{student.assigned_to}}
+        </div>
+        
+    </div>
+ {% endfor %}
+</div>
+      
+</body>
+</html>
